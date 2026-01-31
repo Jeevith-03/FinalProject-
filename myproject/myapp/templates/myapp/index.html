@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flight Reservation | Login</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body{
+      min-height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      background: linear-gradient(120deg, #0f172a, #1e293b);
+      color:#fff;
+    }
+
+    .login-card{
+      width: 380px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 18px;
+      padding: 28px 24px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+    }
+
+    .title{
+      font-size: 22px;
+      font-weight: 700;
+      text-align:center;
+    }
+
+    .subtitle{
+      text-align:center;
+      margin-top: 6px;
+      font-size: 13px;
+      color: rgba(255,255,255,0.75);
+    }
+
+    .form-group{
+      margin-top: 18px;
+    }
+
+    label{
+      font-size: 13px;
+      display:block;
+      margin-bottom: 6px;
+      color: rgba(255,255,255,0.8);
+    }
+
+    input{
+      width:100%;
+      padding: 12px 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.2);
+      outline:none;
+      background: rgba(0,0,0,0.25);
+      color:#fff;
+      font-size: 14px;
+    }
+
+    input::placeholder{
+      color: rgba(255,255,255,0.45);
+    }
+
+    .btn{
+      margin-top: 20px;
+      width:100%;
+      padding: 12px;
+      border:none;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor:pointer;
+      background: #38bdf8;
+      color:#0f172a;
+      transition: 0.2s;
+    }
+
+    .btn:hover{
+      transform: translateY(-2px);
+      background:#0ea5e9;
+    }
+
+    .extra{
+      margin-top: 15px;
+      display:flex;
+      justify-content:space-between;
+      font-size: 13px;
+    }
+
+    .extra a{
+      text-decoration:none;
+      color:#38bdf8;
+    }
+
+    .extra a:hover{
+      text-decoration:underline;
+    }
+
+    .divider{
+      margin: 18px 0;
+      height: 1px;
+      width: 100%;
+      background: rgba(255,255,255,0.15);
+    }
+
+    .footer-text{
+      text-align:center;
+      font-size: 12px;
+      color: rgba(255,255,255,0.6);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="login-card">
+    <div class="title">✈ Flight Reservation Login</div>
+    <div class="subtitle">Securely login to book and manage your flights</div>
+
+    <form method="POST">
+      {% csrf_token %}
+
+      <div class="form-group">
+        <label>Username</label>
+        <input type="text" name="username" placeholder="Enter your username" required>
+      </div>
+
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" name="password" placeholder="Enter your password" required>
+      </div>
+
+      <button class="btn" type="submit">Login</button>
+
+      <div class="extra">
+        <a href="#">Forgot Password?</a>
+        <a href="#">Create Account</a>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="footer-text">
+        © 2026 Flight Reservation System • Safe • Fast • Reliable
+      </div>
+    </form>
+  </div>
+</body>
+</html>
